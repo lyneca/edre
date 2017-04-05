@@ -64,7 +64,7 @@ class Api:
             'X-Token': self._key,
         }
         r = requests.get('https://edstem.com.au/api' + endpoint, headers=headers, params=params)
-        if not r.status_code == 200:
+        if not 200 <= r.status_code < 300:
             return self._error(r)
         return r.json()
 
@@ -99,9 +99,9 @@ class Api:
         return self._get('/user')
     
     def _get_unread(self):
-        print(self._get('/threads/unread')['courses'])  # TODO Do this!
+        print(self._get('/threads/unread')['courses'])  # TODO
 
-    def post(self, title, content='', category='', staff=False):
+    def post(self, title, content='', category='', staff=False):  # TODO
         pass
 
     def like(self, thread_id):
@@ -112,9 +112,9 @@ class Api:
 
     def show_courses(self):
         i = 0
-        print('  +---+--------+------+')
-        print('  |ID |Name    |Unread|')
-        print('+-+---+--------+------+')
+        print('  +---+' +          '-' * (WIDTH - 12) + '+------+')
+        print('  |ID |' + 'Name' + ' ' * (WIDTH - 16) + '|Unread|')
+        print('+-+---+' +          '-' * (WIDTH - 12) + '+------+')
         for course in self.courses:
             print(
                 '|' +
@@ -122,11 +122,39 @@ class Api:
                 '|' +
                 str(course.id) +
                 '|' +
-                course.name +
-                '|' 
+                pad(course.name, WIDTH - 12) +
+                '|'  + 
+                lpad(str(''), 6) + 
+                '|'
             )
-        pass
-    
+            i += 1
+        print('+-+---+' + '-' * (WIDTH - 12) + '+------+')
+
+    def parse_tree(self, o):
+        children = []
+        if 'comments' in o: children += o['comments']
+        if 'answers'  in o: children += o['answers']
+        if children == []:
+            return o['id']
+        else:
+            try:
+                tmp = [sum([[self.parse_tree(x)] for x in children])]
+            except:
+                print([[self.parse_tree(x)] for x in children])
+                raise
+            return [o['id']] + tmp
+    def flatten_children(self, post_id):
+        post = self._get('/threads/' + str(post_id))
+        if 'post' in post:
+            post = post['post']
+        if 'announcement' in post:
+            post = post['announcement']
+        return self.parse_tree(post)
+
+    def _get_post_info(self, post_id):
+        return Post(self._get('/threads/' + str(post_id)))
+
+
     def list_posts(self, course, count=20, filt=''):
         posts = self._get_posts(str(course), count, filt)
         print('  +-----+' + '-' * (WIDTH - 16) + '+---+---+')
@@ -143,9 +171,9 @@ class Api:
                 '|' +
                 pad(post, (WIDTH - 16)) + 
                 '|' + 
-                lpad(post.vote_count, 3, '0') +
+                lpad(post.vote_count, 3, ' ') +
                 '|' + 
-                lpad(post.reply_count, 3, '0') +
+                lpad(post.reply_count, 3, ' ') +
                 '|'
             )
             i += 1
