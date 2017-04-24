@@ -81,6 +81,9 @@ class Api:
             }
         )['threads']]
 
+    def _get_post_info(self, post_id):
+        return Post(self.api._get('/threads/' + str(post_id)))
+
     def _get_role_symbol(self, user):
         if user.course_role == 'admin': return 'a'
         elif user.course_role == 'tutor': return 't'
@@ -110,12 +113,17 @@ class Api:
     def unlike(self, thread_id):
         return self._post('/threads/' + str(thread_id) + '/unvote')
 
+
+class Renderer:
+    def __init__(self, api):
+        self.api = api
+
     def show_courses(self):
         i = 0
         print('  +---+' +          '-' * (WIDTH - 12) + '+------+')
         print('  |ID |' + 'Name' + ' ' * (WIDTH - 16) + '|Unread|')
         print('+-+---+' +          '-' * (WIDTH - 12) + '+------+')
-        for course in self.courses:
+        for course in self.api.courses:
             print(
                 '|' +
                 chr(i + ord('a')) +
@@ -143,16 +151,14 @@ class Api:
                 print([[self.parse_tree(x)] for x in children])
                 raise
             return [o['id']] + tmp
+
     def flatten_children(self, post_id):
-        post = self._get('/threads/' + str(post_id))
+        post = self.api._get('/threads/' + str(post_id))
         if 'post' in post:
             post = post['post']
         if 'announcement' in post:
             post = post['announcement']
         return self.parse_tree(post)
-
-    def _get_post_info(self, post_id):
-        return Post(self._get('/threads/' + str(post_id)))
 
 
     def list_posts(self, course, count=20, filt=''):

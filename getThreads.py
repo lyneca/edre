@@ -1,0 +1,1 @@
+def getEdPost(a, c, i): [print(x['runs'][0]['spans'][0]['text']) for x in __import__("json").loads(__import__("requests").get("https://edstem.com.au/api/courses/" + str(c) + "/threads", headers={"User-Agent": "Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0","X-Token": a}).json()['threads'][i]['content'])['document']['paragraphs']]
