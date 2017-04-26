@@ -50,7 +50,10 @@ class Api:
         raise ApiError("{code}: {reason}".format(code=response.status_code, reason=response.reason))
 
     def _post(self, endpoint, data={}):
-        headers = {'content-type': 'application/json;charset=UTF-8'}
+        headers = {
+            'content-type': 'application/json;charset=UTF-8',
+            'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36'
+        }
         if self._key:
             headers['X-Token'] = self._key
         r = requests.post('https://edstem.com.au/api' + endpoint, headers=headers, data=data)
@@ -62,6 +65,7 @@ class Api:
     def _get(self, endpoint, params={}):
         headers = {
             'X-Token': self._key,
+            'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36'
         }
         r = requests.get('https://edstem.com.au/api' + endpoint, headers=headers, params=params)
         if not 200 <= r.status_code < 300:
@@ -112,6 +116,9 @@ class Api:
 
     def unlike(self, thread_id):
         return self._post('/threads/' + str(thread_id) + '/unvote')
+
+    def view(self, thread_id):
+        return self._post('/threads/' + str(thread_id) + '/view')
 
 
 class Renderer:
