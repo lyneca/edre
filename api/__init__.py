@@ -79,4 +79,4 @@ class Api:
     
 if __name__ == '__main__':
     api = Api()
-    print(get_thread_from_id(30499).comments)
+    print(api.courses[0])
