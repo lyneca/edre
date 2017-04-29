@@ -17,7 +17,10 @@ import os
 class Api:
     def __init__(self, silent=False):
         self.silent = silent
-
+    
+    def get_thread_from_id(self, thread_id):
+        return get_thread_from_id(thread_id)
+    
     def debug(self, *args, **kwargs):
         if not self.silent: print(*args, **kwargs)
 
@@ -77,6 +80,4 @@ class Api:
         self.user = User(r['user'])
         self.courses = [Course(x) for x in r['courses']]
     
-if __name__ == '__main__':
-    api = Api()
-    print(api.courses[0])
+    
