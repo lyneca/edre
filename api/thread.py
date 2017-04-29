@@ -58,7 +58,7 @@ class Thread:
     def view(self):
         return self.req.post(self.url + '/view')
 
-    def comment(self, text):
+    def comment(self, text):  # TODO
         return self.req.post(self.url + '/comments')
 
 class Announcement(Thread):
