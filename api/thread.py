@@ -1,4 +1,5 @@
 from .request import Requester, json
+from .comment import Comment
 
 class UnrecognizedFormatException(Exception):
     pass
@@ -29,6 +30,10 @@ class Thread:
         self.__dict__.update(d)
         self.req = Requester()
         self.url = '/threads/' + str(self.id)
+        temp = []
+        for comment in self.comments:
+            temp.append(Comment(comment))
+        self.comments = temp
 
     def __repr__(self):
         return "Thread{{{}:{:.20}...}}".format(self.id, self.title)
