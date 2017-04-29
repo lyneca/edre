@@ -1,7 +1,7 @@
-edapi
-=====
+edre
+====
 
 .. toctree::
    :maxdepth: 4
 
-   edapi
+   edre
