@@ -8,6 +8,23 @@ class Course:
         self.url = '/courses/' + str(self.id)
 
     def post(self, title, text, thread_type="p", category="General", subcategory="", pinned=False, private=False, anon=False):
+        """
+        Create a post in the course.
+
+        :param title: Title of the thread
+        :param text: Content of the thread
+        :param thread_type: Type of the thread:
+
+            * ``p``: post
+            * ``q``: question
+            * ``a``: announcement
+
+        :param category: Category of the thread
+        :param subcategory: Subcategory of the thread
+        :param pinned: Whether to pin the post
+        :param private: Whether the post is visible to staff only
+        :param anon: Whether the post is anonymous
+        """
         thread_type = {'q':'question','p':'post','a':'announcement'}[thread_type]
         thread = {
             "post":{
