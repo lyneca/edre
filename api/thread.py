@@ -52,6 +52,9 @@ class Thread:
     def unstar(self):
         return self.req.post(self.url + '/unstar')
     
+    def read(self):
+        return self.req.post(self.url + '/read')
+
     def view(self):
         return self.req.post(self.url + '/view')
 
