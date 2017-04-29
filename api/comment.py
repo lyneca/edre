@@ -7,10 +7,10 @@ class Comment:
         self.url = '/comments/' + str(self.id)
 
     def like():
-        pass
+        return self.req.post(self.url + '/upvote')
 
     def unlike():
-        pass
+        return self.req.post(self.url + '/unvote')
 
     def reply():
         pass
