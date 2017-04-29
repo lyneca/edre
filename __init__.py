@@ -1,9 +1,3 @@
-"""
-ED API
-
-Author: Luke Tuthill
-"""
-
 from . import request
 from .request import Requester, NetworkException, json
 from .course import Course
@@ -15,16 +9,41 @@ import os
 
 
 class Api:
+    """
+    Main class
+
+    :param silent: Whether to print out debug text
+    """
     def __init__(self, silent=False):
         self.silent = silent
     
     def get_thread_from_id(self, thread_id):
+        """
+        Returns an object inheriting from :class:`thread.Thread` (:class:`thread.Post`, :class:`thread.Question` or :class:`thread.Announcement`) from a thread ID.
+
+        :param thread_id: Thread ID to get
+        """
         return get_thread_from_id(thread_id)
     
     def debug(self, *args, **kwargs):
+        """
+        Debug prints statements according to the Api.silent flag
+        """
         if not self.silent: print(*args, **kwargs)
 
     def login(self, username='', password=''):
+        """
+        Logs into Ed and obtains and saves an API key into a .session_key file.
+
+        If there is already a .session_key file (from a past run), it will be read, and
+        the validity of the session key inside will be tested. If it is invalid, it will
+        log in and generate a new one.
+
+        If the username or password parameter is not provided, you will be prompted for input.
+
+        :param username: Username to log in with
+        :param password: Password to log in with
+        """
         token = ''
         self.debug('logging in...')
         request.base_url = "https://edstem.com.au/api"
@@ -73,9 +92,14 @@ class Api:
         )['token']
 
     def key(self):
+        """Return the access token in use"""
         return self.req.access_token
 
     def get_info(self):
+        """
+        Gets info about the currently logged-in user, and saves the user's courses to a list of 
+        :class:`course.Course` objects.
+        """
         r = self.req.get('/user')
         self.user = User(r['user'])
         self.courses = [Course(x) for x in r['courses']]
