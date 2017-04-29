@@ -17,8 +17,8 @@ class Comment:
     def unlike(self):
         return self.req.post(self.url + '/unvote')
 
-    def reply():  # TODO
-        pass
+    def reply(self, text):
+        return self.req.post(self.url + '/comments', json.dumps({'comment':{'content':text}}))
 
     def __str__(self):
         return repr(self)
