@@ -1,0 +1,342 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>edapi package &#8212; edre 1.2.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="edapi-package">
+<h1>edapi package<a class="headerlink" href="#edapi-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-edapi.comment">
+<span id="edapi-comment-module"></span><h2>edapi.comment module<a class="headerlink" href="#module-edapi.comment" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="edapi.comment.Comment">
+<em class="property">class </em><code class="descclassname">edapi.comment.</code><code class="descname">Comment</code><span class="sig-paren">(</span><em>d</em><span class="sig-paren">)</span><a class="headerlink" href="#edapi.comment.Comment" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="edapi.comment.Comment.like">
+<code class="descname">like</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#edapi.comment.Comment.like" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="edapi.comment.Comment.reply">
+<code class="descname">reply</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#edapi.comment.Comment.reply" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="edapi.comment.Comment.unlike">
+<code class="descname">unlike</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#edapi.comment.Comment.unlike" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-edapi.course">
+<span id="edapi-course-module"></span><h2>edapi.course module<a class="headerlink" href="#module-edapi.course" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="edapi.course.Course">
+<em class="property">class </em><code class="descclassname">edapi.course.</code><code class="descname">Course</code><span class="sig-paren">(</span><em>d</em><span class="sig-paren">)</span><a class="headerlink" href="#edapi.course.Course" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="edapi.course.Course.get_thread_overviews">
+<code class="descname">get_thread_overviews</code><span class="sig-paren">(</span><em>limit=20</em>, <em>sort='date'</em>, <em>order='desc'</em><span class="sig-paren">)</span><a class="headerlink" href="#edapi.course.Course.get_thread_overviews" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="edapi.course.Course.post">
+<code class="descname">post</code><span class="sig-paren">(</span><em>title</em>, <em>text</em>, <em>thread_type='p'</em>, <em>category='General'</em>, <em>subcategory=''</em>, <em>pinned=False</em>, <em>private=False</em>, <em>anon=False</em><span class="sig-paren">)</span><a class="headerlink" href="#edapi.course.Course.post" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-edapi.request">
+<span id="edapi-request-module"></span><h2>edapi.request module<a class="headerlink" href="#module-edapi.request" title="Permalink to this headline">¶</a></h2>
+<dl class="exception">
+<dt id="edapi.request.NetworkException">
+<em class="property">exception </em><code class="descclassname">edapi.request.</code><code class="descname">NetworkException</code><a class="headerlink" href="#edapi.request.NetworkException" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="edapi.request.Requester">
+<em class="property">class </em><code class="descclassname">edapi.request.</code><code class="descname">Requester</code><a class="headerlink" href="#edapi.request.Requester" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="edapi.request.Requester.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>endpoint</em>, <em>params={}</em><span class="sig-paren">)</span><a class="headerlink" href="#edapi.request.Requester.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="edapi.request.Requester.post">
+<code class="descname">post</code><span class="sig-paren">(</span><em>endpoint</em>, <em>data={}</em><span class="sig-paren">)</span><a class="headerlink" href="#edapi.request.Requester.post" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="edapi.request.Requester.update_token">
+<code class="descname">update_token</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#edapi.request.Requester.update_token" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-edapi.tests">
+<span id="edapi-tests-module"></span><h2>edapi.tests module<a class="headerlink" href="#module-edapi.tests" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-edapi.thread">
+<span id="edapi-thread-module"></span><h2>edapi.thread module<a class="headerlink" href="#module-edapi.thread" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="edapi.thread.Announcement">
+<em class="property">class </em><code class="descclassname">edapi.thread.</code><code class="descname">Announcement</code><span class="sig-paren">(</span><em>d</em>, <em>overview=False</em><span class="sig-paren">)</span><a class="headerlink" href="#edapi.thread.Announcement" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="exception">
+<dt id="edapi.thread.OverviewException">
+<em class="property">exception </em><code class="descclassname">edapi.thread.</code><code class="descname">OverviewException</code><a class="headerlink" href="#edapi.thread.OverviewException" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="edapi.thread.Post">
+<em class="property">class </em><code class="descclassname">edapi.thread.</code><code class="descname">Post</code><span class="sig-paren">(</span><em>d</em>, <em>overview=False</em><span class="sig-paren">)</span><a class="headerlink" href="#edapi.thread.Post" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="edapi.thread.Question">
+<em class="property">class </em><code class="descclassname">edapi.thread.</code><code class="descname">Question</code><span class="sig-paren">(</span><em>d</em>, <em>overview=False</em><span class="sig-paren">)</span><a class="headerlink" href="#edapi.thread.Question" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="edapi.thread.Thread">
+<em class="property">class </em><code class="descclassname">edapi.thread.</code><code class="descname">Thread</code><span class="sig-paren">(</span><em>d</em>, <em>overview=False</em><span class="sig-paren">)</span><a class="headerlink" href="#edapi.thread.Thread" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="edapi.thread.Thread.comment">
+<code class="descname">comment</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#edapi.thread.Thread.comment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="edapi.thread.Thread.like">
+<code class="descname">like</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#edapi.thread.Thread.like" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="edapi.thread.Thread.read">
+<code class="descname">read</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#edapi.thread.Thread.read" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="edapi.thread.Thread.star">
+<code class="descname">star</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#edapi.thread.Thread.star" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="edapi.thread.Thread.unlike">
+<code class="descname">unlike</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#edapi.thread.Thread.unlike" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="edapi.thread.Thread.unstar">
+<code class="descname">unstar</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#edapi.thread.Thread.unstar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="edapi.thread.Thread.view">
+<code class="descname">view</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#edapi.thread.Thread.view" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="edapi.thread.UnrecognizedFormatException">
+<em class="property">exception </em><code class="descclassname">edapi.thread.</code><code class="descname">UnrecognizedFormatException</code><a class="headerlink" href="#edapi.thread.UnrecognizedFormatException" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="edapi.thread.get_thread">
+<code class="descclassname">edapi.thread.</code><code class="descname">get_thread</code><span class="sig-paren">(</span><em>thread</em><span class="sig-paren">)</span><a class="headerlink" href="#edapi.thread.get_thread" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="edapi.thread.get_thread_from_id">
+<code class="descclassname">edapi.thread.</code><code class="descname">get_thread_from_id</code><span class="sig-paren">(</span><em>thread_id</em><span class="sig-paren">)</span><a class="headerlink" href="#edapi.thread.get_thread_from_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-edapi.user">
+<span id="edapi-user-module"></span><h2>edapi.user module<a class="headerlink" href="#module-edapi.user" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="edapi.user.User">
+<em class="property">class </em><code class="descclassname">edapi.user.</code><code class="descname">User</code><span class="sig-paren">(</span><em>d</em><span class="sig-paren">)</span><a class="headerlink" href="#edapi.user.User" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-edapi">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-edapi" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="edapi.Api">
+<em class="property">class </em><code class="descclassname">edapi.</code><code class="descname">Api</code><span class="sig-paren">(</span><em>silent=False</em><span class="sig-paren">)</span><a class="headerlink" href="#edapi.Api" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main class</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>silent</strong> &#8211; Whether to print out debug text</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="edapi.Api.debug">
+<code class="descname">debug</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#edapi.Api.debug" title="Permalink to this definition">¶</a></dt>
+<dd><p>Debug prints statements according to the Api.silent flag</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="edapi.Api.get_info">
+<code class="descname">get_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#edapi.Api.get_info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="edapi.Api.get_thread_from_id">
+<code class="descname">get_thread_from_id</code><span class="sig-paren">(</span><em>thread_id</em><span class="sig-paren">)</span><a class="headerlink" href="#edapi.Api.get_thread_from_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an object inheriting from Thread (Post, Question or Announcement) from a thread ID.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>thread_id</strong> &#8211; Thread ID to get</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="edapi.Api.key">
+<code class="descname">key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#edapi.Api.key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="edapi.Api.login">
+<code class="descname">login</code><span class="sig-paren">(</span><em>username=''</em>, <em>password=''</em><span class="sig-paren">)</span><a class="headerlink" href="#edapi.Api.login" title="Permalink to this definition">¶</a></dt>
+<dd><p>Logs into Ed and obtains and saves an API key into a .session_key file.</p>
+<p>If there is already a .session_key file (from a past run), it will be read, and
+the validity of the session key inside will be tested. If it is invalid, it will
+log in and generate a new one.</p>
+<p>If the username or password parameter is not provided, you will be prompted for input.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>username</strong> &#8211; Username. If left blank and needed, login() will ask you for it.</li>
+<li><strong>password</strong> &#8211; Password. If left blank and needed, login() will ask you for it.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">edapi package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-edapi.comment">edapi.comment module</a></li>
+<li><a class="reference internal" href="#module-edapi.course">edapi.course module</a></li>
+<li><a class="reference internal" href="#module-edapi.request">edapi.request module</a></li>
+<li><a class="reference internal" href="#module-edapi.tests">edapi.tests module</a></li>
+<li><a class="reference internal" href="#module-edapi.thread">edapi.thread module</a></li>
+<li><a class="reference internal" href="#module-edapi.user">edapi.user module</a></li>
+<li><a class="reference internal" href="#module-edapi">Module contents</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/edapi.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Luke Tuthill.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/edapi.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
