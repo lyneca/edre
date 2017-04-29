@@ -1,62 +1,55 @@
-edre package
+Edre Package
 ============
 
-Submodules
+Api Object
 ----------
 
-edre\.comment module
---------------------
-
-.. automodule:: edre.comment
+.. autoclass:: edre.Api
     :members:
     :undoc-members:
-    :show-inheritance:
+    
+Object Types
+------------
 
-edre\.course module
--------------------
+User 
+++++
 
-.. automodule:: edre.course
+.. automodule:: edre.user.User
     :members:
     :undoc-members:
-    :show-inheritance:
 
-edre\.request module
---------------------
+Course 
+++++++
 
-.. automodule:: edre.request
+.. autoclass:: edre.course.Course
     :members:
     :undoc-members:
-    :show-inheritance:
 
-edre\.tests module
-------------------
+Thread
+++++++
+
+.. autoclass:: edre.thread.Thread
+    :members:
+    :undoc-members:
+
+Comment 
++++++++
+
+.. autoclass:: edre.comment.Comment
+    :members:
+    :undoc-members:
+
+Requester 
++++++++++
+
+.. autoclass:: Requester
+    :members:
+    :undoc-members:
+
+Tests
+-----
 
 .. automodule:: edre.tests
     :members:
     :undoc-members:
-    :show-inheritance:
-
-edre\.thread module
--------------------
-
-.. automodule:: edre.thread
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-edre\.user module
------------------
-
-.. automodule:: edre.user
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-
-Module contents
----------------
-
-.. automodule:: edre
-    :members:
-    :undoc-members:
-    :show-inheritance:
+    
