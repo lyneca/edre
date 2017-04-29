@@ -1,227 +1,180 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Edre Package &mdash; edre 1.2.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
     
-    <title>edre package &#8212; edre 1.2.0 documentation</title>
-    
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '1.2.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="edre 1.2.0 documentation" href="index.html"/>
+        <link rel="prev" title="Welcome to the EdRE Documentation!" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
    
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+  <div class="wy-grid-for-nav">
 
-  </head>
-  <body role="document">
-  
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
+          
+            <a href="index.html" class="icon icon-home"> edre
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Edre Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#api-object">Api Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#object-types">Object Types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#user">User</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#course">Course</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thread">Thread</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comment">Comment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#requester">Requester</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-edre.tests">Tests</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">edre</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Edre Package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/edre.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="edre-package">
-<h1>edre package<a class="headerlink" href="#edre-package" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="module-edre.comment">
-<span id="edre-comment-module"></span><h2>edre.comment module<a class="headerlink" href="#module-edre.comment" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="edre.comment.Comment">
-<em class="property">class </em><code class="descclassname">edre.comment.</code><code class="descname">Comment</code><span class="sig-paren">(</span><em>d</em><span class="sig-paren">)</span><a class="headerlink" href="#edre.comment.Comment" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
-<dl class="method">
-<dt id="edre.comment.Comment.like">
-<code class="descname">like</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#edre.comment.Comment.like" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="edre.comment.Comment.reply">
-<code class="descname">reply</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#edre.comment.Comment.reply" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="edre.comment.Comment.unlike">
-<code class="descname">unlike</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#edre.comment.Comment.unlike" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-edre.course">
-<span id="edre-course-module"></span><h2>edre.course module<a class="headerlink" href="#module-edre.course" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="edre.course.Course">
-<em class="property">class </em><code class="descclassname">edre.course.</code><code class="descname">Course</code><span class="sig-paren">(</span><em>d</em><span class="sig-paren">)</span><a class="headerlink" href="#edre.course.Course" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
-<dl class="method">
-<dt id="edre.course.Course.get_thread_overviews">
-<code class="descname">get_thread_overviews</code><span class="sig-paren">(</span><em>limit=20</em>, <em>sort='date'</em>, <em>order='desc'</em><span class="sig-paren">)</span><a class="headerlink" href="#edre.course.Course.get_thread_overviews" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="edre.course.Course.post">
-<code class="descname">post</code><span class="sig-paren">(</span><em>title</em>, <em>text</em>, <em>thread_type='p'</em>, <em>category='General'</em>, <em>subcategory=''</em>, <em>pinned=False</em>, <em>private=False</em>, <em>anon=False</em><span class="sig-paren">)</span><a class="headerlink" href="#edre.course.Course.post" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-edre.request">
-<span id="edre-request-module"></span><h2>edre.request module<a class="headerlink" href="#module-edre.request" title="Permalink to this headline">¶</a></h2>
-<dl class="exception">
-<dt id="edre.request.NetworkException">
-<em class="property">exception </em><code class="descclassname">edre.request.</code><code class="descname">NetworkException</code><a class="headerlink" href="#edre.request.NetworkException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
-</dd></dl>
-
-<dl class="class">
-<dt id="edre.request.Requester">
-<em class="property">class </em><code class="descclassname">edre.request.</code><code class="descname">Requester</code><a class="headerlink" href="#edre.request.Requester" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
-<dl class="method">
-<dt id="edre.request.Requester.get">
-<code class="descname">get</code><span class="sig-paren">(</span><em>endpoint</em>, <em>params={}</em><span class="sig-paren">)</span><a class="headerlink" href="#edre.request.Requester.get" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="edre.request.Requester.post">
-<code class="descname">post</code><span class="sig-paren">(</span><em>endpoint</em>, <em>data={}</em><span class="sig-paren">)</span><a class="headerlink" href="#edre.request.Requester.post" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="edre.request.Requester.update_token">
-<code class="descname">update_token</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#edre.request.Requester.update_token" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-edre.tests">
-<span id="edre-tests-module"></span><h2>edre.tests module<a class="headerlink" href="#module-edre.tests" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="module-edre.thread">
-<span id="edre-thread-module"></span><h2>edre.thread module<a class="headerlink" href="#module-edre.thread" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="edre.thread.Announcement">
-<em class="property">class </em><code class="descclassname">edre.thread.</code><code class="descname">Announcement</code><span class="sig-paren">(</span><em>d</em>, <em>overview=False</em><span class="sig-paren">)</span><a class="headerlink" href="#edre.thread.Announcement" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#edre.thread.Thread" title="edre.thread.Thread"><code class="xref py py-class docutils literal"><span class="pre">edre.thread.Thread</span></code></a></p>
-</dd></dl>
-
-<dl class="exception">
-<dt id="edre.thread.OverviewException">
-<em class="property">exception </em><code class="descclassname">edre.thread.</code><code class="descname">OverviewException</code><a class="headerlink" href="#edre.thread.OverviewException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
-</dd></dl>
-
-<dl class="class">
-<dt id="edre.thread.Post">
-<em class="property">class </em><code class="descclassname">edre.thread.</code><code class="descname">Post</code><span class="sig-paren">(</span><em>d</em>, <em>overview=False</em><span class="sig-paren">)</span><a class="headerlink" href="#edre.thread.Post" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#edre.thread.Thread" title="edre.thread.Thread"><code class="xref py py-class docutils literal"><span class="pre">edre.thread.Thread</span></code></a></p>
-</dd></dl>
-
-<dl class="class">
-<dt id="edre.thread.Question">
-<em class="property">class </em><code class="descclassname">edre.thread.</code><code class="descname">Question</code><span class="sig-paren">(</span><em>d</em>, <em>overview=False</em><span class="sig-paren">)</span><a class="headerlink" href="#edre.thread.Question" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#edre.thread.Thread" title="edre.thread.Thread"><code class="xref py py-class docutils literal"><span class="pre">edre.thread.Thread</span></code></a></p>
-</dd></dl>
-
-<dl class="class">
-<dt id="edre.thread.Thread">
-<em class="property">class </em><code class="descclassname">edre.thread.</code><code class="descname">Thread</code><span class="sig-paren">(</span><em>d</em>, <em>overview=False</em><span class="sig-paren">)</span><a class="headerlink" href="#edre.thread.Thread" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
-<dl class="method">
-<dt id="edre.thread.Thread.comment">
-<code class="descname">comment</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#edre.thread.Thread.comment" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="edre.thread.Thread.like">
-<code class="descname">like</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#edre.thread.Thread.like" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="edre.thread.Thread.read">
-<code class="descname">read</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#edre.thread.Thread.read" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="edre.thread.Thread.star">
-<code class="descname">star</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#edre.thread.Thread.star" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="edre.thread.Thread.unlike">
-<code class="descname">unlike</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#edre.thread.Thread.unlike" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="edre.thread.Thread.unstar">
-<code class="descname">unstar</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#edre.thread.Thread.unstar" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="edre.thread.Thread.view">
-<code class="descname">view</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#edre.thread.Thread.view" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="exception">
-<dt id="edre.thread.UnrecognizedFormatException">
-<em class="property">exception </em><code class="descclassname">edre.thread.</code><code class="descname">UnrecognizedFormatException</code><a class="headerlink" href="#edre.thread.UnrecognizedFormatException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
-</dd></dl>
-
-<dl class="function">
-<dt id="edre.thread.get_thread">
-<code class="descclassname">edre.thread.</code><code class="descname">get_thread</code><span class="sig-paren">(</span><em>thread</em><span class="sig-paren">)</span><a class="headerlink" href="#edre.thread.get_thread" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="edre.thread.get_thread_from_id">
-<code class="descclassname">edre.thread.</code><code class="descname">get_thread_from_id</code><span class="sig-paren">(</span><em>thread_id</em><span class="sig-paren">)</span><a class="headerlink" href="#edre.thread.get_thread_from_id" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</div>
-<div class="section" id="module-edre.user">
-<span id="edre-user-module"></span><h2>edre.user module<a class="headerlink" href="#module-edre.user" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="edre.user.User">
-<em class="property">class </em><code class="descclassname">edre.user.</code><code class="descname">User</code><span class="sig-paren">(</span><em>d</em><span class="sig-paren">)</span><a class="headerlink" href="#edre.user.User" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
-</dd></dl>
-
-</div>
-<div class="section" id="module-edre">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-edre" title="Permalink to this headline">¶</a></h2>
+<h1>Edre Package<a class="headerlink" href="#edre-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="api-object">
+<h2>Api Object<a class="headerlink" href="#api-object" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="edre.Api">
 <em class="property">class </em><code class="descclassname">edre.</code><code class="descname">Api</code><span class="sig-paren">(</span><em>silent=False</em><span class="sig-paren">)</span><a class="headerlink" href="#edre.Api" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
-<p>Main class</p>
+<dd><p>Main class</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -240,13 +193,13 @@
 <dt id="edre.Api.get_info">
 <code class="descname">get_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#edre.Api.get_info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets info about the currently logged-in user, and saves the user&#8217;s courses to a list of 
-<a class="reference internal" href="#edre.course.Course" title="edre.course.Course"><code class="xref py py-class docutils literal"><span class="pre">course.Course</span></code></a> objects.</p>
+<code class="xref py py-class docutils literal"><span class="pre">course.Course</span></code> objects.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="edre.Api.get_thread_from_id">
 <code class="descname">get_thread_from_id</code><span class="sig-paren">(</span><em>thread_id</em><span class="sig-paren">)</span><a class="headerlink" href="#edre.Api.get_thread_from_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns an object inheriting from <a class="reference internal" href="#edre.thread.Thread" title="edre.thread.Thread"><code class="xref py py-class docutils literal"><span class="pre">thread.Thread</span></code></a> (<a class="reference internal" href="#edre.thread.Post" title="edre.thread.Post"><code class="xref py py-class docutils literal"><span class="pre">thread.Post</span></code></a>, <a class="reference internal" href="#edre.thread.Question" title="edre.thread.Question"><code class="xref py py-class docutils literal"><span class="pre">thread.Question</span></code></a> or <a class="reference internal" href="#edre.thread.Announcement" title="edre.thread.Announcement"><code class="xref py py-class docutils literal"><span class="pre">thread.Announcement</span></code></a>) from a thread ID.</p>
+<dd><p>Returns an object inheriting from <code class="xref py py-class docutils literal"><span class="pre">thread.Thread</span></code> (<code class="xref py py-class docutils literal"><span class="pre">thread.Post</span></code>, <code class="xref py py-class docutils literal"><span class="pre">thread.Question</span></code> or <code class="xref py py-class docutils literal"><span class="pre">thread.Announcement</span></code>) from a thread ID.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -288,70 +241,209 @@ log in and generate a new one.</p>
 </dd></dl>
 
 </div>
+<div class="section" id="object-types">
+<h2>Object Types<a class="headerlink" href="#object-types" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="user">
+<h3>User<a class="headerlink" href="#user" title="Permalink to this headline">¶</a></h3>
 </div>
+<div class="section" id="course">
+<h3>Course<a class="headerlink" href="#course" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="edre.course.Course">
+<em class="property">class </em><code class="descclassname">edre.course.</code><code class="descname">Course</code><span class="sig-paren">(</span><em>d</em><span class="sig-paren">)</span><a class="headerlink" href="#edre.course.Course" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="edre.course.Course.get_thread_overviews">
+<code class="descname">get_thread_overviews</code><span class="sig-paren">(</span><em>limit=20</em>, <em>sort='date'</em>, <em>order='desc'</em><span class="sig-paren">)</span><a class="headerlink" href="#edre.course.Course.get_thread_overviews" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
-
-          </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">edre package</a><ul>
-<li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#module-edre.comment">edre.comment module</a></li>
-<li><a class="reference internal" href="#module-edre.course">edre.course module</a></li>
-<li><a class="reference internal" href="#module-edre.request">edre.request module</a></li>
-<li><a class="reference internal" href="#module-edre.tests">edre.tests module</a></li>
-<li><a class="reference internal" href="#module-edre.thread">edre.thread module</a></li>
-<li><a class="reference internal" href="#module-edre.user">edre.user module</a></li>
-<li><a class="reference internal" href="#module-edre">Module contents</a></li>
+<dl class="method">
+<dt id="edre.course.Course.post">
+<code class="descname">post</code><span class="sig-paren">(</span><em>title</em>, <em>text</em>, <em>thread_type='p'</em>, <em>category='General'</em>, <em>subcategory=''</em>, <em>pinned=False</em>, <em>private=False</em>, <em>anon=False</em><span class="sig-paren">)</span><a class="headerlink" href="#edre.course.Course.post" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a post in the course.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>title</strong> &#8211; Title of the thread</li>
+<li><strong>text</strong> &#8211; Content of the thread</li>
+<li><strong>thread_type</strong> &#8211; <p>Type of the thread:</p>
+<ul>
+<li><code class="docutils literal"><span class="pre">p</span></code>: post</li>
+<li><code class="docutils literal"><span class="pre">q</span></code>: question</li>
+<li><code class="docutils literal"><span class="pre">a</span></code>: announcement</li>
 </ul>
 </li>
+<li><strong>category</strong> &#8211; Category of the thread</li>
+<li><strong>subcategory</strong> &#8211; Subcategory of the thread</li>
+<li><strong>pinned</strong> &#8211; Whether to pin the post</li>
+<li><strong>private</strong> &#8211; Whether the post is visible to staff only</li>
+<li><strong>anon</strong> &#8211; Whether the post is anonymous</li>
 </ul>
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-  </ul></li>
-</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
 </div>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/edre.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
+<div class="section" id="thread">
+<h3>Thread<a class="headerlink" href="#thread" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="edre.thread.Thread">
+<em class="property">class </em><code class="descclassname">edre.thread.</code><code class="descname">Thread</code><span class="sig-paren">(</span><em>d</em>, <em>overview=False</em><span class="sig-paren">)</span><a class="headerlink" href="#edre.thread.Thread" title="Permalink to this definition">¶</a></dt>
+<dd><p>Superclass for dealing with threads.</p>
+<dl class="method">
+<dt id="edre.thread.Thread.comment">
+<code class="descname">comment</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#edre.thread.Thread.comment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a comment to this post.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="edre.thread.Thread.like">
+<code class="descname">like</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#edre.thread.Thread.like" title="Permalink to this definition">¶</a></dt>
+<dd><p>Upvotes this post.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="edre.thread.Thread.read">
+<code class="descname">read</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#edre.thread.Thread.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a read receipt for this post.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="edre.thread.Thread.star">
+<code class="descname">star</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#edre.thread.Thread.star" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stars this post.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="edre.thread.Thread.unlike">
+<code class="descname">unlike</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#edre.thread.Thread.unlike" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unvotes this post.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="edre.thread.Thread.unstar">
+<code class="descname">unstar</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#edre.thread.Thread.unstar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unstars this post.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="edre.thread.Thread.view">
+<code class="descname">view</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#edre.thread.Thread.view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Increments this post&#8217;s view counter.</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<div class="section" id="comment">
+<h3>Comment<a class="headerlink" href="#comment" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="edre.comment.Comment">
+<em class="property">class </em><code class="descclassname">edre.comment.</code><code class="descname">Comment</code><span class="sig-paren">(</span><em>d</em><span class="sig-paren">)</span><a class="headerlink" href="#edre.comment.Comment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for defining comment objects.</p>
+<dl class="method">
+<dt id="edre.comment.Comment.like">
+<code class="descname">like</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#edre.comment.Comment.like" title="Permalink to this definition">¶</a></dt>
+<dd><p>Upvotes this comment.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="edre.comment.Comment.reply">
+<code class="descname">reply</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#edre.comment.Comment.reply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replies to this comment.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="edre.comment.Comment.unlike">
+<code class="descname">unlike</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#edre.comment.Comment.unlike" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unvotes this comment.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="requester">
+<h3>Requester<a class="headerlink" href="#requester" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="module-edre.tests">
+<span id="tests"></span><h2>Tests<a class="headerlink" href="#module-edre.tests" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Welcome to the EdRE Documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Luke Tuthill.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2017, Luke Tuthill.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.5</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
-      
-      |
-      <a href="_sources/edre.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
 
-    
+    </section>
 
-    
-  </body>
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.2.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
 </html>
