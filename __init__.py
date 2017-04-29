@@ -19,7 +19,7 @@ class Api:
     
     def get_thread_from_id(self, thread_id):
         """
-        Returns an object inheriting from Thread (Post, Question or Announcement) from a thread ID.
+        Returns an object inheriting from :class:`thread.Thread` (:class:`thread.Post`, :class:`thread.Question` or :class:`thread.Announcement`) from a thread ID.
 
         :param thread_id: Thread ID to get
         """
@@ -41,8 +41,8 @@ class Api:
 
         If the username or password parameter is not provided, you will be prompted for input.
 
-        :param username: Username. If left blank and needed, login() will ask you for it.
-        :param password: Password. If left blank and needed, login() will ask you for it.
+        :param username: Username to log in with
+        :param password: Password to log in with
         """
         token = ''
         self.debug('logging in...')
@@ -92,9 +92,14 @@ class Api:
         )['token']
 
     def key(self):
+        """Return the access token in use"""
         return self.req.access_token
 
     def get_info(self):
+        """
+        Gets info about the currently logged-in user, and saves the user's courses to a list of 
+        :class:`course.Course` objects.
+        """
         r = self.req.get('/user')
         self.user = User(r['user'])
         self.courses = [Course(x) for x in r['courses']]
