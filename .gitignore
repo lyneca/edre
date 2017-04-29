@@ -1,4 +1,4 @@
 __pycache__
 *.swp
 \.session_key
-saved_queries
+saved_queries/
