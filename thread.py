@@ -35,6 +35,8 @@ def get_thread(thread):
 class Thread:
     """
     Superclass for dealing with threads.
+
+    :param d: Dict representing the thread
     """
     def __init__(self, d, overview=False):
         self.overview = overview

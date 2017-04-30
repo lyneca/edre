@@ -3,6 +3,8 @@ from .request import Requester, json
 class Comment:
     """
     Class for defining comment objects.
+
+    :param d: Dict representing a comment.
     """
     def __init__(self, d):
         self.__dict__.update(d)

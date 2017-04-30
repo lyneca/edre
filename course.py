@@ -2,6 +2,11 @@ from .request import Requester, json
 from .thread import get_thread
 
 class Course:
+    """
+    Object representing a course.
+
+    :param d: Dict representing a course.
+    """
     def __init__(self, d):
         self.__dict__.update(d)
         self.req = Requester()
