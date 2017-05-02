@@ -1,5 +1,6 @@
 from .request import Requester, json
 from .thread import get_thread
+from .challenge import Challenge
 
 class Course:
     def __init__(self, d):
@@ -40,6 +41,9 @@ class Course:
         }
         return self.req.post('/courses/542/threads', json.dumps(thread))
 
+    def get_challenges(self):
+        challenge_ids = [x['id'] for x in self.req.get(self.url + '/challenges')['challenges']]
+        return [Challenge(self.req.get('/challenges/' + str(x))['challenge']) for x in challenge_ids]
 
     def get_thread_overviews(self, limit=20, sort='date', order='desc'):
         return [get_thread(t) for t in self.req.get(self.url + '/threads', params={'limit':limit, 'sort': sort, 'order': order})['threads']]
