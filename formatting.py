@@ -41,7 +41,7 @@ def convert_to_markdown(text):
                     text = '**' + text + '**'
                 if 'italic' in style and style['italic']:
                     text = '*' + text + '*'
-                if 'under' in style and style['under']:
+                if 'underline' in style and style['underline']:
                     text = '_' + text + '_'
                 if 'type' in style and style['type'] == 1:
                     text = '`' + text + '`'
